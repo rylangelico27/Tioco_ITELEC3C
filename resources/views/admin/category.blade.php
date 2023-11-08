@@ -11,7 +11,6 @@
                 <x-welcome />
             </div> --}}
             <div class="container">
-                <a href="" class="btn btn-info">Create</a>
                 <table class="table">
                     <thead>
                         <tr>
