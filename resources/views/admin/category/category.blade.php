@@ -4,15 +4,15 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            {{-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
-            </div> --}}
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{session('success')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                         <div class="card p-2">
                             <table class="table">
                     <thead>
@@ -21,7 +21,7 @@
                             <th scope="col">Category Name</th>
                             <th scope="col">User ID</th>
                             <th scope="col">Created At</th>
-                            {{-- <th scope="col" colspan="2">Actions</th> --}}
+                                <th scope="col" colspan="2">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,9 +30,9 @@
                                 <th scope="row">{{ $category->id }}</th>
                                 <td>{{ $category->cat_name }}</td>
                                 <td>{{ $category->user_id }}</td>
-                                <td>{{ $category->created_at }}</td>
-                                {{-- <td><a href="{{url('edit_category', $category->id)}}"><i class="bi bi-pencil-square"></i></a></td>
-                                <td><a href="{{url('delete_category', $category->id)}}" onclick="return confirm('Are you sure you want to delete this category?')"><i class="bi bi-trash-fill text-danger"></i></a></td> --}}
+                                <td>{{ $category->created_at->diffForHumans()}}</td>
+                                <td><a href="{{url('edit_category', $category->id)}}"><i class="bi bi-pencil-square"></i></a></td>
+                                <td><a href="{{url('delete_category', $category->id)}}" onclick="return confirm('Are you sure you want to delete this category?')"><i class="bi bi-trash-fill text-danger"></i></a></td>
                             </tr>
                         @endforeach
                     </tbody>
