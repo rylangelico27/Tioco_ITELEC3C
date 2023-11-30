@@ -117,7 +117,7 @@
                         {{-- <th scope="row">{{$categories->firstItem()+$loop->index}}</th>  --}}
                         <th scope="row">{{$i++}}</th>
                         <td>{{ $trash->category_name }}</td>
-                        <td>{{ $trash->user->name }}</td>
+                        <td>{{ $trash->user_id}}</td>
 
 
                         <td>{{ $trash->deleted_at->diffForHumans() }}</td>
