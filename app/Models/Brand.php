@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Brand extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
-        'category_name',
-        'user_id'
+        'brand_name',
+        'brand_image',
     ];
 
     public function user(){
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->hasOne(User::class,'id','user_id');
     }
 }
